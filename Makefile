@@ -51,7 +51,7 @@ CORES = 4
 LEPTONICA_VERSION := 1.80.0
 
 # Tesseract commit. Default: $(TESSERACT_VERSION)
-TESSERACT_VERSION := 4.1.1
+TESSERACT_VERSION := 
 
 # Tesseract model repo to use. Default: $(TESSDATA_REPO)
 TESSDATA_REPO = _best
