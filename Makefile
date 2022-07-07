@@ -206,20 +206,20 @@ $(ALL_GT): $(shell find -L $(GROUND_TRUTH_DIR) -name '*.gt.txt')
 
 .PRECIOUS: %.box
 %.box: %.png %.gt.txt
-	PYTHONIOENCODING=utf-8 python3 $(GENERATE_BOX_SCRIPT) -i "$*.png" -t "$*.gt.txt" > "$@"
+	PYTHONIOENCODING=utf-8 python $(GENERATE_BOX_SCRIPT) -i "$*.png" -t "$*.gt.txt" > "$@"
 
 %.box: %.bin.png %.gt.txt
-	PYTHONIOENCODING=utf-8 python3 $(GENERATE_BOX_SCRIPT) -i "$*.bin.png" -t "$*.gt.txt" > "$@"
+	PYTHONIOENCODING=utf-8 python $(GENERATE_BOX_SCRIPT) -i "$*.bin.png" -t "$*.gt.txt" > "$@"
 
 %.box: %.nrm.png %.gt.txt
-	PYTHONIOENCODING=utf-8 python3 $(GENERATE_BOX_SCRIPT) -i "$*.nrm.png" -t "$*.gt.txt" > "$@"
+	PYTHONIOENCODING=utf-8 python $(GENERATE_BOX_SCRIPT) -i "$*.nrm.png" -t "$*.gt.txt" > "$@"
 
 %.box: %.tif %.gt.txt
-	PYTHONIOENCODING=utf-8 python3 $(GENERATE_BOX_SCRIPT) -i "$*.tif" -t "$*.gt.txt" > "$@"
+	PYTHONIOENCODING=utf-8 python $(GENERATE_BOX_SCRIPT) -i "$*.tif" -t "$*.gt.txt" > "$@"
 
 $(ALL_LSTMF): $(patsubst %.gt.txt,%.lstmf,$(shell find -L $(GROUND_TRUTH_DIR) -name '*.gt.txt'))
 	@mkdir -p $(OUTPUT_DIR)
-	find -L $(GROUND_TRUTH_DIR) -name '*.lstmf' | python3 shuffle.py $(RANDOM_SEED) > "$@"
+	find -L $(GROUND_TRUTH_DIR) -name '*.lstmf' | python shuffle.py $(RANDOM_SEED) > "$@"
 
 %.lstmf: %.box
 	@if test -f "$*.png"; then \
