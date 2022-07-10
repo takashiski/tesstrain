@@ -16,7 +16,7 @@ PATH := $(LOCAL)/bin:$(PATH)
 TESSDATA =  $(LOCAL)/share/tessdata
 
 # Name of the model to be built. Default: $(MODEL_NAME)
-MODEL_NAME = foo
+MODEL_NAME = jpn_spl
 
 # Data directory for output files, proto model, start model, etc. Default: $(DATA_DIR)
 DATA_DIR = data
@@ -37,7 +37,7 @@ NUMBERS_FILE := $(OUTPUT_DIR)/$(MODEL_NAME).numbers
 PUNC_FILE := $(OUTPUT_DIR)/$(MODEL_NAME).punc
 
 # Name of the model to continue from. Default: '$(START_MODEL)'
-START_MODEL =
+START_MODEL = 
 
 LAST_CHECKPOINT = $(OUTPUT_DIR)/checkpoints/$(MODEL_NAME)_checkpoint
 
@@ -51,7 +51,7 @@ CORES = 4
 LEPTONICA_VERSION := 1.80.0
 
 # Tesseract commit. Default: $(TESSERACT_VERSION)
-TESSERACT_VERSION := 5
+TESSERACT_VERSION := 
 
 # Tesseract model repo to use. Default: $(TESSDATA_REPO)
 TESSDATA_REPO = _best
@@ -350,7 +350,7 @@ tesseract-$(TESSERACT_VERSION):
 	unzip $(TESSERACT_VERSION).zip
 
 # Download tesseract-langs
-tesseract-langs: $(TESSDATA)/eng.traineddata
+tesseract-langs: $(TESSDATA)/jpn.traineddata
 
 $(TESSDATA)/eng.traineddata:
 	cd $(TESSDATA) && wget https://github.com/tesseract-ocr/tessdata$(TESSDATA_REPO)/raw/main/$(notdir $@)
