@@ -8,7 +8,7 @@ MAKEFLAGS += -r
 LC_ALL := C
 
 SHELL := /bin/bash
-LOCAL := $(PWD)/usr
+LOCAL := $(PWD)/usr/local
 PATH := $(LOCAL)/bin:$(PATH)
 
 # Path to the .traineddata directory with traineddata suitable for training 
