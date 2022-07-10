@@ -352,7 +352,7 @@ tesseract-$(TESSERACT_VERSION):
 # Download tesseract-langs
 tesseract-langs: $(TESSDATA)/jpn.traineddata
 
-$(TESSDATA)/eng.traineddata:
+$(TESSDATA)/jpn.traineddata:
 	cd $(TESSDATA) && wget https://github.com/tesseract-ocr/tessdata$(TESSDATA_REPO)/raw/main/$(notdir $@)
 
 # Clean generated .box files
