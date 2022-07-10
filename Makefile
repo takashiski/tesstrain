@@ -37,7 +37,7 @@ NUMBERS_FILE := $(OUTPUT_DIR)/$(MODEL_NAME).numbers
 PUNC_FILE := $(OUTPUT_DIR)/$(MODEL_NAME).punc
 
 # Name of the model to continue from. Default: '$(START_MODEL)'
-START_MODEL = 
+START_MODEL = jpn
 
 LAST_CHECKPOINT = $(OUTPUT_DIR)/checkpoints/$(MODEL_NAME)_checkpoint
 
